@@ -29,7 +29,7 @@ Route::get('/', function () {
 Route::get('/Blog/{id}', function ($id) {
     return view('singleBlog',
     [
-            'singleBlog' => Blog::find($id)
+        'singleBlog' => Blog::find($id)
     ]
     );
 });
