@@ -2,5 +2,5 @@
     {{$singleBlog['title']}}
   </h2>
     <p>
-      {{$singleBlog['description']}}    
+      {{$singleBlog['content']}}    
     </p>
