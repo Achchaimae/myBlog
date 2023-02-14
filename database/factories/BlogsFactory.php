@@ -22,6 +22,7 @@ class BlogsFactory extends Factory
             'content' => $this->faker->paragraph(), 
             'category' => $this->faker->sentence(),
             'comments' => $this->faker->sentence(),
+            'Author' => $this->faker->company(),
         ];
     }
 }

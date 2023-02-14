@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('tags');
             $table->string('category');
             $table->string('comments');
+            $table->string('author');
             $table->timestamps();
         });
     }

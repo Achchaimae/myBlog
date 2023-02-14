@@ -26,10 +26,8 @@ Route::get('/', function () {
 });
 
 //single blog
-Route::get('/Blog/{id}', function ($id) {
-    return view('singleBlog',
-    [
-        'singleBlog' => Blogs::find($id)
-    ]
-    );
-});
+Route ::get('/Blog/{listing}' , function(Blogs $listing){
+    return view('singleBlog' , [
+        'singleBlog' => $listing
+    ]);
+});   
