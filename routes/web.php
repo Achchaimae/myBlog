@@ -1,7 +1,7 @@
 <?php
 use illuminate\http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Models\Blog;
+use App\Models\Blogs;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,10 +15,10 @@ use App\Models\Blog;
 */
 //home page
 Route::get('/', function () {
-    return view('Blog ',
+    return view('Blog',
     [ 
         'heading' => 'Latest Blog' ,
-        'listing' => Blog::all()
+        'listing' => blogs::all()
                     
             
     ]
@@ -29,7 +29,7 @@ Route::get('/', function () {
 Route::get('/Blog/{id}', function ($id) {
     return view('singleBlog',
     [
-        'singleBlog' => Blog::find($id)
+        'singleBlog' => Blogs::find($id)
     ]
     );
 });
