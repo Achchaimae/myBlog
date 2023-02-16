@@ -1,7 +1,7 @@
 <?php
 use illuminate\http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Models\Blogs;
+use App\Http\Controllers\BlogController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,20 +14,7 @@ use App\Models\Blogs;
 |
 */
 //home page
-Route::get('/', function () {
-    return view('Blog',
-    [ 
-        'heading' => 'Latest Blog' ,
-        'listing' => blogs::all()
-                    
-            
-    ]
-    );
-});
+Route::get('/', [BlogController::class, 'index']);
 
 //single blog
-Route ::get('/Blog/{listing}' , function(Blogs $listing){
-    return view('singleBlog' , [
-        'singleBlog' => $listing
-    ]);
-});   
+Route ::get('/Blog/{listing}' , [BlogController::class, 'show']);   
